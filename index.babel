@@ -1,0 +1,48 @@
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      writing: `# h1
+## h2
+[a link](https:www.google.com)\n
+This is \`an inline = example\`\n
+\`\`\`
+some code block
+example
+\`\`\`
+1. list item
+2. list item 2
+>A blockquote example\n
+![sample image taken from documentation](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png 'Logo Title Text 1')\n 
+**Bold Text**
+
+`
+    };
+    this.changeFunction = this.changeFunction.bind(this);
+  }
+
+  changeFunction(event) {
+    this.setState({ writing: event.target.value });
+  }
+
+  render() {
+    return (
+      <div id="container">
+        <textarea
+          id="editor"
+          value={this.state.writing}
+          onChange={this.changeFunction}
+        />
+
+        <div>
+          <div
+            id="preview"
+            dangerouslySetInnerHTML={{ __html: marked(this.state.writing) }}
+          />
+        </div>
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(<App />, document.getElementById("render-target"));

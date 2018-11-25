@@ -1,0 +1,22 @@
+#container {
+  display: flex;
+  justify-content: center;
+  align-items: ;
+  background: #88ddaa;
+}
+#editor{
+  margin:20px;
+  background:black;
+  color:white;
+  width:50%;
+    
+}
+#preview{
+  width:;
+  box-shadow:3px 3px 9px 1px #555;
+ background:white;
+  border-radius: 15px;
+  padding-right:10px;
+  padding-left:10px;
+  
+}
